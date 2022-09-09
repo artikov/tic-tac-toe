@@ -59,9 +59,10 @@ def game():
 
         else:
             print('Wrong input. Please try again...')
+            continue
 
         # store the winner in a single game
-        winner = single_game(options[choice-1],)
+        winner = single_game(options[choice-1], player_choice)
 
         if winner != 'D':
             player_won = player_choice[winner]

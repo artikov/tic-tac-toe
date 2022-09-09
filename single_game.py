@@ -2,7 +2,7 @@ from grid import print_tic_tac_toe
 from result import check_win, check_draw
 
 
-def single_game(current_player):
+def single_game(current_player, players):
     # create empty boxes for grid
     values = [' ' for x in range(9)]
 
@@ -16,7 +16,7 @@ def single_game(current_player):
 
         # try exception for player move
         try:
-            print(current_player, "'s turn. Which box? : ")
+            print(players[current_player] + "'s turn. Which box? : ")
             move = int(input())
         except ValueError:
             print("Numbers from 1-9 only. Try again...")
@@ -41,7 +41,7 @@ def single_game(current_player):
         # function call to check winning
         if check_win(player_position, current_player):
             print_tic_tac_toe(values)
-            print(current_player, 'has won the game!!!\n')
+            print(players[current_player], 'has won the game!!!\n')
             return current_player
 
         if check_draw(player_position):
